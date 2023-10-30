@@ -1,6 +1,8 @@
-# :shell: 0x05 - Python, Classes and objects :shell:
+# :shell: 0x05 - Python, Test-Driven Development :shell:
 
-In this project I will be learning how to implement classes and object oriented programming in python. I have experience in C# so doing it in python will be interesting.
+In this project I will be learning about the `doctest` module and unit testing.
+I have done some unit testing in the past, but furthering my experience will be valuable.
+The goal is to create unit tests before creating the actual program itself.
 
 ## :running: Getting Started
 
