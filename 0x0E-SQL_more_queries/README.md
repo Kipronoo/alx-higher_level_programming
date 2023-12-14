@@ -1,80 +1,66 @@
 ![img](https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png)
 
-![sql-meme](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/272/rtcwz.jpg)
+![sql-join-meme](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg)
 
-## About
-SQL! Structured Query Language (SQL) is a programming language that is widely used for managing and manipulating relational databases. With its ability to extract valuable insights and data from large and complex databases, SQL has become an essential tool for businesses of all sizes. In this project, we'll dive into the basics of SQL, its key features and benefits, and how you can use it to manage your own databases. Whether you're a beginner or an experienced user, this project will provide you with a comprehensive overview of SQL and its applications. So, let's get started!
+## About 
+While SQL is a powerful language for managing data, it also has many intermediate concepts that can be used to create more complex and nuanced queries. Example of such include __Joins__, __Subqueries__ , __Aggregate Functions__ __Window Functions__, __Views__ and __Stored Procedures__ Lets explore the most common of them in this project. 
 
 ## Resources
-__Read or watch__ 
-1. [What is a Database & SQL](https://www.youtube.com/watch?v=FR4QIeZaPeM)
-2. [Basic mySQL tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
-3. [Basic SQL statments DDL and DML](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/ddldml.php)
-4. [Basic Queries SQL and RA](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/queries.php)
-6. [SQL techniques: functions](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/functions.php)
-7. [SQL techniques: subqueries](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/subqueries.php)
-8. [What makes a big difference between backticks and apostrophe](https://stackoverflow.com/questions/29402361/what-makes-the-big-difference-between-a-backtick-and-an-apostrophe/29402458)
+1. [How to create a new user and assing permission in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+2. [How to use MySQL GRANT statement to assign permissions to users](https://www.mysqltutorial.org/mysql-grant.aspx)
+3. [MySQL constraits](https://zetcode.com/mysql/constraints/)
+4. [SQL techniques: subqueries](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/subqueries.php)
+5. [SQL techniques: join](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
+6. [SQL techniqes: multiple joins and the disctint keyword](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/multijoin.php)
+7. [SQL techniques: join types](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/jointypes.php)
+8. [SQL techniques: unions and minus](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/setops.php)
 9. [MySQL cheatsheet](https://intellipaat.com/mediaFiles/2019/02/SQL-Commands-Cheat-Sheet.pdf?US)
-10. [MySQL 8.0 Statement syntax](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
-11. [Installing MySQL on ubuntu](https://phoenixnap.com/kb/install-mysql-ubuntu-20-04)
+10. [Seven Join types ](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html)
+11. [MySQL tutorial](https://www.youtube.com/watch?v=yPu6qV5byu4)
+12. [SQL style guide](https://www.sqlstyle.guide/)
+13. [MySQL 8.0 statement syntax](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
 
-## Learning objectives
+ Extra resources around relational database model design
 
-At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/) the following concepts without the help of __Google__
+ [Design](https://www.guru99.com/database-design.html)
 
-* [X] What’s a database
-* [X] What’s a relational database
-* [X] What does SQL stand for
-* [X] What’s MySQL
-* [X] How to create a database in MySQL
-* [X] What does DDL and DML stand for
-* [X] How to CREATE or ALTER a table
-* [X] How to SELECT data from a table
-* [X] How to INSERT, UPDATE or DELETE data
-* [X] What are subqueries
-* [X] How to use MySQL functions
+ [Normalization](https://www.guru99.com/database-normalization.html)
 
-## More info
-### Comments for your SQL files
+ [ER modeling](https://www.guru99.com/er-modeling.html)
 
-```
-$ cat my_script.sql
--- 3 first students in the Batch ID=3
--- because Batch 3 is the best!
-SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
+
+ ## Learning objectives
+ By the end of this project, you are expected to be able to [explain to anyone]() __without the help of Google__
+
+ * [X] How to create a new MySQL user
+ * [X] How to manage privileges for a user to a database or table
+ * [X] What is a ```PRIMARY KEY ```
+ * [X] What’s a ```FOREIGN KEY```
+ * [X] How to use ```NOT NULL``` and ```UNIQUE``` constraints
+ * [X] How to retrieve datas from multiple tables in one request
+ * [X] What are subqueries
+ * [X] What are JOIN and UNION
+
+ ## How to import a SQL dump
+ ```
+ $ echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -uroot -p
+Enter password: 
+$ curl "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql" -s | mysql -uroot -p hbtn_0d_tvshows
+Enter password: 
+$ echo "SELECT * FROM tv_genres" | mysql -uroot -p hbtn_0d_tvshows
+Enter password: 
+id  name
+1   Drama
+2   Mystery
+3   Adventure
+4   Fantasy
+5   Comedy
+6   Crime
+7   Suspense
+8   Thriller
 $
 ```
+![sql-joins-cheat-sheet](./sql-cheat-sheet.png)
 
-### Install MySQL 8.0 on Ubuntu 20.04 LTS
-
-```
-$ sudo apt update
-$ sudo apt install mysql-server
-...
-$ mysql --version
-mysql  Ver 8.0.25-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
-$
-```
-
-### Connect to your MySQL server
-```
-$ sudo mysql
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 11
-Server version: 8.0.25-0ubuntu0.20.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2021, Oracle and/or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql>
-mysql> quit
-Bye
-$
-```
 ## Quizes
-[Quiz](./quiz.md)
+[Quizes](./quiz.md)
